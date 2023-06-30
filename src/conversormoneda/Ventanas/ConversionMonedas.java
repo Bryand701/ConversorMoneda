@@ -4,6 +4,9 @@
  */
 package conversormoneda.Ventanas;
 
+import Conversiones.Conversion;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author bryan
@@ -13,9 +16,13 @@ public class ConversionMonedas extends javax.swing.JFrame {
     /**
      * Creates new form MenuPrincipal
      */
-    
+    Conversion colonesDolares = new Conversion("Colones", "Dolares",542.92);
+    Conversion colonesEuros = new Conversion("Colones", "Euros",589.89);
+    Conversion colonesLibra = new Conversion("Colones", "Libra Esterlina",684.60);
+    Conversion colonesYenes = new Conversion("Colones", "Yen Japonés",3.75);
+    Conversion colonesWones = new Conversion("Colones", "Won sul-coreano",0.41);
     public ConversionMonedas() {
-       
+        
         initComponents();
     }
 
@@ -28,9 +35,19 @@ public class ConversionMonedas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroupConversiones = new javax.swing.ButtonGroup();
+        buttonGroupConversion = new javax.swing.ButtonGroup();
         jLabelMenu = new javax.swing.JLabel();
         jLabelSeleccione = new javax.swing.JLabel();
+        jComboBoxXaColon = new javax.swing.JComboBox<>();
+        jRadioButtonColonAX = new javax.swing.JRadioButton();
+        jRadioButtonXaConlon = new javax.swing.JRadioButton();
+        jComboBoxColonAX = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldCantidad = new javax.swing.JTextField();
+        jLabelResultado = new javax.swing.JLabel();
+        jButtonConvertir = new javax.swing.JButton();
+        jButtonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú Principal");
@@ -44,32 +61,171 @@ public class ConversionMonedas extends javax.swing.JFrame {
         jLabelSeleccione.setFont(new java.awt.Font("DialogInput", 2, 14)); // NOI18N
         jLabelSeleccione.setText("Seleccione el tipo de conversión ");
 
+        jComboBoxXaColon.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jComboBoxXaColon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dolares a Colones", "Euros a Colones", "Libra Esterlina a Colones", "Yen Japonés a Colones", "Won sul-coreano a Colones" }));
+
+        buttonGroupConversion.add(jRadioButtonColonAX);
+        jRadioButtonColonAX.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jRadioButtonColonAX.setSelected(true);
+        jRadioButtonColonAX.setText("Colones a X");
+        jRadioButtonColonAX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonColonAXActionPerformed(evt);
+            }
+        });
+
+        buttonGroupConversion.add(jRadioButtonXaConlon);
+        jRadioButtonXaConlon.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jRadioButtonXaConlon.setText("X a Conlones");
+
+        jComboBoxColonAX.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jComboBoxColonAX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Colones a Dolares", "Colones a Euros", "Colones a Libra Esterlina", "Colones a Yen Japonés", "Colones a Won sul-coreano" }));
+
+        jLabel1.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jLabel1.setText("Cantidad a convertir");
+
+        jLabel2.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jLabel2.setText("Resultado");
+
+        jTextFieldCantidad.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jTextFieldCantidad.setName(""); // NOI18N
+
+        jLabelResultado.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jLabelResultado.setText("Esperando reultado");
+
+        jButtonConvertir.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jButtonConvertir.setText("Convertir");
+        jButtonConvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConvertirActionPerformed(evt);
+            }
+        });
+
+        jButtonAtras.setFont(new java.awt.Font("DialogInput", 2, 11)); // NOI18N
+        jButtonAtras.setText("Volver Atras");
+        jButtonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 56, Short.MAX_VALUE)
+                .addGap(69, 69, 69)
+                .addComponent(jLabelMenu)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabelSeleccione))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelSeleccione)
-                        .addGap(52, 52, 52))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelMenu)
-                        .addGap(65, 65, 65))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButtonColonAX)
+                            .addComponent(jRadioButtonXaConlon))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxColonAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxXaColon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jButtonConvertir))
+                            .addComponent(jLabel1)
+                            .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(jButtonAtras))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabelMenu)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelSeleccione)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxColonAX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonColonAX))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxXaColon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonXaConlon))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(jTextFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonAtras)
+                    .addComponent(jButtonConvertir))
+                .addGap(9, 9, 9))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButtonColonAXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonColonAXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonColonAXActionPerformed
+
+    private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
+        // TODO add your handling code here:
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonAtrasActionPerformed
+
+    private void jButtonConvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvertirActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButtonColonAX.isSelected()) {            
+            try {
+                double valor = Double.parseDouble(jTextFieldCantidad.getText());
+                switch (jComboBoxColonAX.getSelectedIndex()) {
+                case 0 -> jLabelResultado.setText(colonesDolares.convertirPrincipalASecundario(valor)+"");
+                case 1 -> jLabelResultado.setText(colonesEuros.convertirPrincipalASecundario(valor)+"");
+                case 2 -> jLabelResultado.setText(colonesLibra.convertirPrincipalASecundario(valor)+"");
+                case 3 -> jLabelResultado.setText(colonesYenes.convertirPrincipalASecundario(valor)+"");
+                case 4 -> jLabelResultado.setText(colonesWones.convertirPrincipalASecundario(valor)+"");
+                default -> throw new AssertionError();
+            }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Debe introducir un número, verifique que no contenga letras u otro caracter");
+            }
+        }
+        else{
+            try {
+                double valor = Double.parseDouble(jTextFieldCantidad.getText());
+                switch (jComboBoxXaColon.getSelectedIndex()) {
+                    case 0 -> jLabelResultado.setText(colonesDolares.convertirSecundarioAPrincipal(valor)+"");
+                    case 1 -> jLabelResultado.setText(colonesEuros.convertirSecundarioAPrincipal(valor)+"");
+                    case 2 -> jLabelResultado.setText(colonesLibra.convertirSecundarioAPrincipal(valor)+"");
+                    case 3 -> jLabelResultado.setText(colonesYenes.convertirSecundarioAPrincipal(valor)+"");
+                    case 4 -> jLabelResultado.setText(colonesWones.convertirSecundarioAPrincipal(valor)+"");
+                    default -> throw new AssertionError();
+            }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Debe introducir un número, verifique que no contenga letras u otro caracter");
+            }
+        }
+    }//GEN-LAST:event_jButtonConvertirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,6 +258,7 @@ public class ConversionMonedas extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ConversionMonedas().setVisible(true);
@@ -110,8 +267,18 @@ public class ConversionMonedas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroupConversiones;
+    private javax.swing.ButtonGroup buttonGroupConversion;
+    private javax.swing.JButton jButtonAtras;
+    private javax.swing.JButton jButtonConvertir;
+    private javax.swing.JComboBox<String> jComboBoxColonAX;
+    private javax.swing.JComboBox<String> jComboBoxXaColon;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelMenu;
+    private javax.swing.JLabel jLabelResultado;
     private javax.swing.JLabel jLabelSeleccione;
+    private javax.swing.JRadioButton jRadioButtonColonAX;
+    private javax.swing.JRadioButton jRadioButtonXaConlon;
+    private javax.swing.JTextField jTextFieldCantidad;
     // End of variables declaration//GEN-END:variables
 }

@@ -126,7 +126,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jButtonEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmpezarActionPerformed
         // TODO add your handling code here:
         if(jRadioButtonMonedas.isSelected()){
-            
+            ConversionMonedas monedas = new ConversionMonedas();
+            monedas.setVisible(true);
+            this.dispose();
+        }
+        else{
+            ConversionUnidadesMetricas metricas = new ConversionUnidadesMetricas();
+            metricas.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButtonEmpezarActionPerformed
 
